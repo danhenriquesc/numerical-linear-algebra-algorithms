@@ -26,11 +26,11 @@ an1 an2 an3 ... ann bn1 bn2 bn3 ... bnm
 #### Solves:
 
 |  3x<sub>1</sub> + 7x<sub>2</sub> + 12x<sub>3</sub> =  9<br>
-|  x<sub>1</sub> + 5x<sub>2</sub> +  7x<sub>3</sub> = 12<br>
+|   x<sub>1</sub> + 5x<sub>2</sub> +  7x<sub>3</sub> = 12<br>
 |  3x<sub>1</sub> + 3x<sub>2</sub> +  3x<sub>3</sub> =  7<br>
 <br><br>
 |  3x<sub>1</sub> + 7x<sub>2</sub> + 12x<sub>3</sub> =  5<br>
-|  x<sub>1</sub> + 5x<sub>2</sub> +  7x<sub>3</sub> =  1<br>
+|   x<sub>1</sub> + 5x<sub>2</sub> +  7x<sub>3</sub> =  1<br>
 |  3x<sub>1</sub> + 3x<sub>2</sub> +  3x<sub>3</sub> =  1<br>
 
 
