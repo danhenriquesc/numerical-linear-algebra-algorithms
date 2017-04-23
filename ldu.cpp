@@ -40,7 +40,7 @@
 
 using namespace std;
 
-#define MAX_SIZE 1005
+#define MAX_SIZE 305
 #define DECIMAL_THRESHOLD 0.0000000001
 
 int n, m;
@@ -168,7 +168,7 @@ int main(){
 		printMatrix(X[j],"Result (Ux = y)","x");
 	}
 
-	cout << "TEMPO TOTAL: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seg" << endl;;
+	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;;
 
 	return 0;
 }
