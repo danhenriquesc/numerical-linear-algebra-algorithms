@@ -168,7 +168,7 @@ int main(){
 		printMatrix(X[j],"Result (Ux = y)","x");
 	}
 
-	cout << "TEMPO TOTAL: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " seg" << endl;;
+	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;
 
 	return 0;
 }
