@@ -40,7 +40,7 @@
 
 using namespace std;
 
-#define MAX_SIZE 105
+#define MAX_SIZE 305
 #define DECIMAL_THRESHOLD 0.0000000001
 
 int n, m;
@@ -97,8 +97,8 @@ int main(){
 			for(l=c+1;l<=n;l++){
 				mult = AM[l][c]/AM[c][c];
 
-				for(int j=1;j<=n+1;j++){
-					AM[l][j] = AM[l][j]-mult*AM[c][j];
+				for(int k=1;k<=n+1;k++){
+					AM[l][k] = AM[l][k]-mult*AM[c][k];
 				}
 			}
 		}
@@ -107,8 +107,8 @@ int main(){
 		
 		for(int i=1;i<=n;i++){
 			double div = AM[i][i];
-			for(int j=i;j<=n+1;j++){
-				AM[i][j]=AM[i][j]/div;
+			for(int k=i;k<=n+1;k++){
+				AM[i][k]=AM[i][k]/div;
 			}
 		}
 

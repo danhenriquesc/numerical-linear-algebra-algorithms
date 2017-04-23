@@ -40,7 +40,7 @@
 
 using namespace std;
 
-#define MAX_SIZE 105
+#define MAX_SIZE 305
 #define DECIMAL_THRESHOLD 0.0000000001
 
 int n, m;
