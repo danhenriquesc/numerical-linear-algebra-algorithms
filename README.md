@@ -7,7 +7,7 @@
 - LDU Decomposition *
 - Crout Algorithm *
 
-* Just for square matrix
+*Just for square matrix
 
 #### Matrix Determinant Calculator
 - Laplace Expansion
