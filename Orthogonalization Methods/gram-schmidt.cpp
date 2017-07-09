@@ -1,6 +1,7 @@
 /*
 	Algorithm to Orthogonalization of Vectors
 	Gram-Schmidt Process
+	Daniel Henrique (daniel.henrique.sc@gmail.com | daniel.henrique@ime.uerj.br) - 2017
 
 	Input
 

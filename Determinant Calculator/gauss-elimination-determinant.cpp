@@ -1,16 +1,16 @@
 /*
-	Algorithm to solve Linear Equations Algorithms (Just for square matrix)
-	Determinant of Matrix using Gauss Elimination
+	Algorithm to Calculate Matrix Determinant
+	Gauss Elimination
 	Daniel Henrique (daniel.henrique.sc@gmail.com | daniel.henrique@ime.uerj.br) - 2017
 
-	Solve Det(A)
+	Input
 
-	Input:
-	N M
-	a11 a12 a13 ... a1n
-	a21 a22 a23 ... a2n
-	 .   .   .       .  
-	an1 an2 an3 ... ann
+	N (Square Matrix Order)
+	Elem11 Elem12 Elem13 ... Elem1N
+	Elem21 Elem22 Elem23 ... Elem2N
+	Elem31 Elem32 Elem33 ... Elem3N
+	  ...	...	    ...  ...   ...
+	ElemN1 ElemN2 ElemN3 ... ElemNN
 
 	Example:
 	3 3
@@ -31,7 +31,7 @@ using namespace std;
 #define DECIMAL_THRESHOLD 0.0000000001
 
 int n;
-void printMatrix(double A[MAX_SIZE][MAX_SIZE],string);
+void printMatrix(double A[MAX_SIZE][MAX_SIZE], string);
 const clock_t begin_time = clock();
 
 int main(){
@@ -76,6 +76,7 @@ int main(){
 
 	printMatrix(M, "Row Echelon Form");
 
+	//calculing result
 	result = signal;
 	for(int i=1;i<=n;i++){
 		result *= M[i][i];

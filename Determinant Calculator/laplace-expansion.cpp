@@ -1,6 +1,7 @@
 /*
 	Algorithm to Calculate Matrix Determinant
 	Laplace Expansion
+	Daniel Henrique (daniel.henrique.sc@gmail.com | daniel.henrique@ime.uerj.br) - 2017
 
 	Input
 
@@ -10,6 +11,12 @@
 	Elem31 Elem32 Elem33 ... Elem3N
 	  ...	...	    ...  ...   ...
 	ElemN1 ElemN2 ElemN3 ... ElemNN
+
+	Example:
+	3 3
+	1 2 3
+	4 5 6
+	7 8 9
 */
 
 #include <iostream>
