@@ -1,13 +1,13 @@
 # Numerical Linear Algebra Algorithms
 
 #### Linear Equations Systems Solver
-- Gauss Elimination ***
-- Gauss-Jordan Elimination ***
-- LU Decomposition ***
-- LDU Decomposition ***
-- Crout Algorithm ***
+- Gauss Elimination *
+- Gauss-Jordan Elimination *
+- LU Decomposition *
+- LDU Decomposition *
+- Crout Algorithm *
 
-** Just for square matrix*
+*Just for square matrix
 
 #### Matrix Determinant Calculator
 - Laplace Expansion
