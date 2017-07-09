@@ -1,10 +1,16 @@
-//ENTRADA
-// N (Ordem de uma matriz quadrada)
-// el1,1 el1,2 el1,3 .. el1,N
-// el2,1 el2,2 el2,3 .. el2,N
-// el3,1 el3,2 el3,3 .. el3,N
-//  ...	  ... 	... 	 ...             
-// elN,1 elN,2 elN,3 .. elN,N
+/*
+	Algorithm to Calculate Matrix Determinant
+	Laplace Expansion
+
+	Input
+
+	N (Square Matrix Order)
+	Elem11 Elem12 Elem13 ... Elem1N
+	Elem21 Elem22 Elem23 ... Elem2N
+	Elem31 Elem32 Elem33 ... Elem3N
+	  ...	...	    ...  ...   ...
+	ElemN1 ElemN2 ElemN3 ... ElemNN
+*/
 
 #include <iostream>
 #include <vector>
@@ -27,14 +33,14 @@ double laplace(double_matrix V, int N){
 		for(int i=0; i<N;i++){
 			double_matrix N_V;
 			
-			//pula linha 1 (index 0)
+			//ignores line 1 (index 0)
 			for(int k = 1; k < N; k++){
 				double_vector row;
 				
 				N_V.push_back(row);
 
 				for(int j = 0; j < N; j++){
-					//se for coluna atual, remove
+					//ignores current column
 					if(i==j) continue;
 
 					el = V[k][j];
@@ -55,7 +61,7 @@ int main(){
 	double el, det;
 	int N;
 
-	//Leitura
+	//reading input
 	cin >> N;
 
 	for(int i = 0; i < N; i++){
@@ -68,11 +74,11 @@ int main(){
 		}
 	}
 
-	//Laplace
+	//Laplace Expansion
 	det = laplace(V, N);
 
-	//Impressão
-	cout << fixed << det << endl;
+	//printing result
+	cout << "Determinant: " << fixed << det << endl;
 
 	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;
 }
