@@ -1,14 +1,20 @@
-//ENTRADA
-// N (numero de vet.) M (numero de elementos de cada vetor)
-// Vetor1Elem1 Vetor1Elem2 Vetor1Elem3 Vetor1Elem4 ... Vetor1ElemS
-// Vetor2Elem1 Vetor2Elem2 Vetor2Elem3 Vetor2Elem4 ... Vetor2ElemS
-// Vetor3Elem1 Vetor3Elem2 Vetor3Elem3 Vetor3Elem4 ... Vetor3ElemS
-// Vetor4Elem1 Vetor4Elem2 Vetor4Elem3 Vetor4Elem4 ... Vetor4ElemS
-//     ...		   ... 		   ... 		   ...             ...
-// VetorNElem1 VetorNElem2 VetorNElem3 VetorNElem4 ... VetorNElemS
+/*
+	Algorithm to Orthogonalization of Vectors
+	Gram-Schmidt Process
+
+	Input
+
+	N M (N = Number of vectors | M = Number os elements of each vectors)
+	Vec1El1 Vec1El2 Vec1El3 Vec1El4 ... Vec1ElM
+	Vec2El1 Vec2El2 Vec2El3 Vec2El4 ... Vec2ElM
+	Vec3El1 Vec3El2 Vec3El3 Vec3El4 ... Vec3ElM
+	  ...	  ...	  ...	  ...	...	  ...
+	VecNEl1 VecNEl2 VecNEl3 VecNEl4 ... Vec3ElM
+*/
 
 #include <iostream>
 #include <vector>
+#include <iomanip>
 #include <ctime>
 
 using namespace std;
@@ -17,37 +23,17 @@ typedef vector<double> double_vector;
 typedef vector<double_vector> double_matrix;
 
 int N, M;
+double innerProductSpace(double_vector, double_vector);
+double_vector projection(double_vector, double_vector);
+void printMatrix(double_matrix, string);
 const clock_t begin_time = clock();
 
-// Calculando produto interno
-double innerProductSpace(double_vector v, double_vector u){
-	double tot = 0;
-	for(int i = 0; i < M; i++){
-		tot += v[i]*u[i];
-	}
-	return tot;
-}
-
-// Calculando projeção
-double_vector projection(double_vector u, double_vector v){
-	double_vector p;
-	double el;
-
-	double tmp_div = innerProductSpace(v,u)/innerProductSpace(u,u);
-
-	for(int i = 0; i<M; i++){
-		el = tmp_div*u[i];
-		p.push_back(el);
-	}
-
-	return p;
-}
 
 int main(){
 	double_matrix V, U;
 	double el;
 
-	//Leitura
+	//reading input
 	cin >> N >> M;
 
 	for(int i = 0; i < N; i++){
@@ -62,7 +48,9 @@ int main(){
 		}
 	}
 
-	//Realizando o Processo de Gram-Schmidt
+	printMatrix(V, "Original Matrix");
+
+	//Gram-Schmidt Process
 	U[0] = V[0];
 
 	for(int i = 1; i < N; i++){
@@ -77,15 +65,45 @@ int main(){
 		}
 	}
 
-	//Imprimindo
+	printMatrix(U, "Orthogonal Matrix");
+	
+	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;
+
+	return 0;
+}
+
+
+double innerProductSpace(double_vector v, double_vector u){
+	double tot = 0;
+	for(int i = 0; i < M; i++){
+		tot += v[i]*u[i];
+	}
+	return tot;
+}
+
+double_vector projection(double_vector u, double_vector v){
+	double_vector p;
+	double el;
+
+	double tmp_div = innerProductSpace(v,u)/innerProductSpace(u,u);
+
+	for(int i = 0; i<M; i++){
+		el = tmp_div*u[i];
+		p.push_back(el);
+	}
+
+	return p;
+}
+
+void printMatrix(double_matrix U, string title){
+	cout << title << endl;
+
 	for(int i = 0; i < N; i++){
 		for(int j = 0; j < M; j++){
-			cout << U[i][j] << " ";
+			cout << setw(15) << fixed << U[i][j] << " ";
 		}
 		cout << endl;
 	}
 
-	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;
-
-	return 0;
+	cout << endl;
 }
