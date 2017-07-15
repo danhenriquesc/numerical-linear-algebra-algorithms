@@ -46,6 +46,7 @@ typedef vector<double_vector> double_matrix;
 int N, M;
 void printMatrix(double_matrix, string);
 void printVector(double_vector, string);
+void printVector(double_matrix, int, string);
 const clock_t begin_time = clock();
 
 int main(){
@@ -129,7 +130,7 @@ int main(){
 	for(int i = 0; i < M; i++)
 	{
 		cout << "CASE #" << (i+1) << ":" << endl << endl;
-		printVector(B[i], "B" + to_string(i+1) + ": ");
+		printVector(B, i, "B" + to_string(i+1) + ": ");
 
 		//Gy = B - Finding out y
 		for(int l=0; l < N; l++)
@@ -190,6 +191,17 @@ void printVector(double_vector U, string title)
 	for(int j = 0; j < U.size(); j++)
 	{
 		cout << (j+1) << ": " << setw(15) << fixed << U[j] << endl;
+	}
+
+	cout << endl;
+}
+void printVector(double_matrix U, int L, string title)
+{
+	cout << title << endl;
+
+	for(int j = 0; j < U.size(); j++)
+	{
+		cout << (j+1) << ": " << setw(15) << fixed << U[j][L] << endl;
 	}
 
 	cout << endl;
