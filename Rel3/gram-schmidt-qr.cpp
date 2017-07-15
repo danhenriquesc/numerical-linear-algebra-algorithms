@@ -56,7 +56,7 @@ const clock_t begin_time = clock();
 
 
 int main(){
-	double_matrix V_t, V, U, Q, R, Ql, Rl, D, D_t, B, X, Y;
+	double_matrix V_t, V, U, Q, R, Ql, Rl, D, D_t, B, X;
 	double el;
 
 	//reading input
@@ -76,7 +76,6 @@ int main(){
 		D_t.push_back(row);
 		B.push_back(row);
 		X.push_back(row);
-		Y.push_back(row);
 
 		for(int j = 0; j < N; j++)
 		{
@@ -100,7 +99,6 @@ int main(){
 			cin >> el;
 			B[i].push_back(el);
 			X[i].push_back(0);
-			Y[i].push_back(0);
 		}
 	}
 
@@ -316,6 +314,18 @@ void printVector(double_vector U, string title)
 	cout << endl;
 }
 
+void printVector(double_matrix U, int L, string title)
+{
+	cout << title << endl;
+
+	for(int j = 0; j < U.size(); j++)
+	{
+		cout << (j+1) << ": " << setw(15) << fixed << U[j][L] << endl;
+	}
+
+	cout << endl;
+}
+
 double_matrix multiplyMatrix(double_matrix A, double_matrix B)
 {
 	double_matrix C;
@@ -357,16 +367,4 @@ double_matrix transposeMatriz(double_matrix A)
 	}
 
 	return B;
-}
-
-void printVector(double_matrix U, int L, string title)
-{
-	cout << title << endl;
-
-	for(int j = 0; j < U.size(); j++)
-	{
-		cout << (j+1) << ": " << setw(15) << fixed << U[j][L] << endl;
-	}
-
-	cout << endl;
 }
