@@ -195,6 +195,7 @@ void printVector(double_vector U, string title)
 
 	cout << endl;
 }
+
 void printVector(double_matrix U, int L, string title)
 {
 	cout << title << endl;
