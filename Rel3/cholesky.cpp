@@ -1,31 +1,39 @@
 #include <iostream>
-#include <cstring>
+#include <vector>
 #include <iomanip>
 #include <ctime>
 #include <cmath>
 
 using namespace std;
 
-#define MAX_SIZE 305
-#define DECIMAL_THRESHOLD 0.00000000000000001
+typedef vector<double> double_vector;
+typedef vector<double_vector> double_matrix;
 
 int N;
-void printMatrix(double A[MAX_SIZE][MAX_SIZE], string);
+void printMatrix(double_matrix, string);
 const clock_t begin_time = clock();
 
 int main(){
-	double A[MAX_SIZE][MAX_SIZE], G[MAX_SIZE][MAX_SIZE], G_t[MAX_SIZE][MAX_SIZE];
-	
-	memset(G, 0, sizeof(G));
-	memset(G_t, 0, sizeof(G_t));
+	double_matrix A, G, G_t;
+	double el;
 
 	//N is the NxN size of square matrix
 	cin >> N;
 
 	//reading input
 	for(int i=0; i < N; i++){
+		double_vector row;
+		A.push_back(row);
+		G.push_back(row);
+		G_t.push_back(row);
+
+
 		for(int j=0; j < N; j++){
-			cin >> A[i][j];
+			cin >> el;
+			A[i].push_back(el);
+
+			G[i].push_back(0);
+			G_t[i].push_back(0);
 		}
 	}
 
@@ -73,17 +81,14 @@ int main(){
 	return 0;
 }
 
-void printMatrix(double A[MAX_SIZE][MAX_SIZE], string title){
+void printMatrix(double_matrix U, string title){
 	cout << title << endl;
 
-	for(int i=0; i < N ; i++)
+	for(int i = 0; i < N; i++)
 	{
-		for(int j=0; j < N; j++)
+		for(int j = 0; j < N; j++)
 		{
-			if(abs(A[i][j]) < DECIMAL_THRESHOLD)
-				cout << setw(12) << "0";
-			else
-				cout << setw(12) << A[i][j];
+			cout << setw(15) << fixed << U[i][j] << " ";
 		}
 		cout << endl;
 	}
