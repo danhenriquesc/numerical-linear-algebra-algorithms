@@ -204,12 +204,13 @@ double norm(double_vector u){
 	return sqrt(sum);
 }
 
-void printMatrix(double_matrix U, string title){
+void printMatrix(double_matrix U, string title)
+{
 	cout << title << endl;
 
-	for(int i = 0; i < N; i++)
+	for(int i = 0; i < U.size(); i++)
 	{
-		for(int j = 0; j < N; j++)
+		for(int j = 0; j < U[i].size(); j++)
 		{
 			cout << setw(15) << fixed << U[i][j] << " ";
 		}
