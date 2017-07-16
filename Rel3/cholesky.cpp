@@ -139,28 +139,29 @@ int main(){
 
 			for(int c=0; c < l; c++)
 			{
-				value -= G[l][c]*Y[i][c];
+				value -= G[l][c]*Y[c][i];
 			}
 
-			Y[i][l] = value/G[l][l];
+
+			Y[l][i] = value/G[l][l];
 		}
 
-		printVector(Y[i],"Matrix Y (Gy = B)");
+		printMatrix(Y, "Matrix Y (Gy = B)");
 
 		//y = G_t*x - Finding out X
 		for(int l=N-1; l >= 0; l--)
 		{
-			double value = Y[i][l];
+			double value = Y[l][i];
 
 			for(int c=l+1; c < N; c++)
 			{
-				value -= G_t[l][c]*X[i][c];
+				value -= G_t[l][c]*X[c][i];
 			}
 
-			X[i][l] = value/G_t[l][l];
+			X[l][i] = value/G_t[l][l];
 		}
 
-		printVector(X[i],"Result (Ux = y)");
+		printVector(X, i, "Result (Rx = y)");
 	}
 
 	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;

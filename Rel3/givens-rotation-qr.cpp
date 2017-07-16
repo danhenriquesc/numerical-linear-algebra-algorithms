@@ -178,13 +178,13 @@ int main(){
 
 			for(int c=l+1; c < N; c++)
 			{
-				value -= R[l][c]*X[i][c];
+				value -= R[l][c]*X[c][i];
 			}
 
-			X[i][l] = value/R[l][l];
+			X[l][i] = value/R[l][l];
 		}
 
-		printVector(X[i],"Result (Rx = y)");
+		printVector(X, i, "Result (Rx = y)");
 	}
 
 	cout << "Total Time: " << fixed << float( clock () - begin_time ) /  CLOCKS_PER_SEC << " s" << endl;
