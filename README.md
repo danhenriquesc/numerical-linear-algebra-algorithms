@@ -17,4 +17,11 @@
 #### Orthogonalization Methods
 - Gram–Schmidt Process
 
-Implemented by: Daniel Henrique (daniel.henrique.sc@gmail.com | daniel.henrique@ime.uerj.br)
+
+#### Others
+- Cholesky
+- Givens Rotation QR
+- Gram Schmidt QR
+- Householder Reflection QR
+
+Implemented by: Daniel Henrique (daniel.henrique.sc@gmail.com)
