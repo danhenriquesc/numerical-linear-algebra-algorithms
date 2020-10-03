@@ -24,4 +24,5 @@
 - Gram Schmidt QR
 - Householder Reflection QR
 
-Implemented by: Daniel Henrique (daniel.henrique.sc@gmail.com)
+Implemented by:
+Daniel Henrique (daniel.henrique.sc@gmail.com)
