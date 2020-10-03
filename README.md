@@ -1,6 +1,7 @@
 # Numerical Linear Algebra Algorithms
 
 #### Linear Equations Systems Solver
+
 - Gauss Elimination *
 - Gauss-Jordan Elimination *
 - LU Decomposition *
@@ -10,15 +11,18 @@
 *Just for square matrix
 
 #### Matrix Determinant Calculator
+
 - Laplace Expansion
 - Gauss Elimination
 
 
 #### Orthogonalization Methods
+
 - Gram–Schmidt Process
 
 
 #### Others
+
 - Cholesky
 - Givens Rotation QR
 - Gram Schmidt QR
